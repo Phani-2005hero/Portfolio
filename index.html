@@ -1,120 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Phanindra Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phanindra Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    header {
-      text-align: center;
-      padding: 40px;
-      background: #020617;
-    }
+<style>
+:root {
+  --bg: #0f172a;
+  --card: rgba(255,255,255,0.05);
+  --text: white;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 36px;
-    }
+.light {
+  --bg: #f1f5f9;
+  --card: white;
+  --text: black;
+}
 
-    .links a {
-      margin: 10px;
-      display: inline-block;
-      color: #38bdf8;
-      font-weight: bold;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+  scroll-behavior: smooth;
+}
 
-    .skills span {
-      display: inline-block;
-      background: #2563eb;
-      padding: 6px 12px;
-      margin: 5px;
-      border-radius: 6px;
-    }
+/* TOGGLE */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 70px 20px;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+h1 {
+  font-size: 45px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+#typing {
+  font-size: 18px;
+  color: #94a3b8;
+  margin-top: 10px;
+}
 
-    form input, form textarea {
-      width: 100%;
-      margin: 5px 0;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-    }
+/* LINKS */
+.links a {
+  margin: 10px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: var(--card);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
 
-    button {
-      background: #22c55e;
-      border: none;
-      padding: 10px;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.links a:hover {
+  background: #38bdf8;
+  transform: scale(1.1);
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      margin-top: 30px;
-    }
-  </style>
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+h2 {
+  border-left: 5px solid #38bdf8;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* SKILLS */
+.skills span {
+  padding: 8px 14px;
+  margin: 5px;
+  display: inline-block;
+  background: #38bdf8;
+  border-radius: 20px;
+}
+
+/* FORM */
+form input, textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+</style>
 </head>
 
 <body>
 
+<div class="toggle" onclick="toggleMode()">🌗</div>
+
 <header>
   <h1>Phanindra Thirunagari</h1>
-  <p>Full Stack Developer | ML Enthusiast</p>
+  <p id="typing"></p>
 
   <div class="links">
-    <a href="resume.pdf" download>📄 Resume</a>
+    <a href="resume.pdf" target="_blank">👀 View Resume</a>
+    <a href="resume.pdf" download>⬇️ Download Resume</a>
     <a href="https://github.com/Phani-2005hero" target="_blank">💻 GitHub</a>
     <a href="https://www.linkedin.com/in/thirunagari-phanindra-16478334a" target="_blank">🔗 LinkedIn</a>
   </div>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <p>
-    Computer Science undergraduate with strong foundations in Python, Data Structures, and Web Development.
-    Passionate about Machine Learning and building real-world applications.
-  </p>
+  <h2>About</h2>
+  <div class="card">
+    Computer Science student passionate about building real-world applications using Python, Machine Learning, and Web Technologies 🚀
+  </div>
 </section>
 
 <section>
   <h2>Education</h2>
   <div class="card">
-    <h3>B.Tech in Computer Science</h3>
-    <p>SR University</p>
-    <p>CGPA: <b>8.5 / 10</b></p>
+    B.Tech CSE - SR University<br>
+    CGPA: <b>8.5 / 10</b>
   </div>
 </section>
 
@@ -128,100 +186,88 @@
     <span>JavaScript</span>
     <span>SQL</span>
     <span>Machine Learning</span>
-    <span>Pandas</span>
-    <span>NumPy</span>
-    <span>Scikit-Learn</span>
   </div>
 </section>
 
 <section>
   <h2>Projects</h2>
   <div class="grid">
-
-    <div class="card">
-      <h3>Career Roadmap Website</h3>
-      <p>Interactive web app to help users plan career paths.</p>
-    </div>
-
-    <div class="card">
-      <h3>Rain Water Harvesting System</h3>
-      <p>GIS-based system for feasibility and sustainability analysis.</p>
-    </div>
-
-    <div class="card">
-      <h3>Morse Code System</h3>
-      <p>Accessible communication system for visually impaired users.</p>
-    </div>
-
+    <div class="card">Career Roadmap Website</div>
+    <div class="card">Rain Water Harvesting System</div>
+    <div class="card">Morse Code System</div>
   </div>
 </section>
 
 <section>
   <h2>Certifications</h2>
   <div class="grid">
-
-    <div class="card">
-      <h3>Complete Web Development Journey</h3>
-      <p>Infosys Springboard (Oct 2024)</p>
-    </div>
-
-    <div class="card">
-      <h3>Introduction to Deep Learning</h3>
-      <p>Infosys Springboard (Sept 2024)</p>
-    </div>
-
-    <div class="card">
-      <h3>Data Analytics Essentials</h3>
-      <p>Cisco Academy (Dec 2024)</p>
-    </div>
-
-    <div class="card">
-      <h3>Networking Basics</h3>
-      <p>Cisco Academy</p>
-    </div>
-
-    <div class="card">
-      <h3>Google Cloud Generative AI Leader Track</h3>
-      <p>Google Cloud Career Launchpad</p>
-    </div>
-
-    <div class="card">
-      <h3>AWS Cloud Foundations</h3>
-      <p>Amazon Web Services</p>
-    </div>
-
+    <div class="card">Web Development - Infosys</div>
+    <div class="card">Deep Learning - Infosys</div>
+    <div class="card">Data Analytics - Cisco</div>
+    <div class="card">Networking Basics - Cisco</div>
+    <div class="card">Google Cloud Gen AI</div>
+    <div class="card">AWS Cloud Foundations</div>
   </div>
 </section>
 
 <section>
   <h2>Achievements</h2>
-  <ul>
-    <li>Participated in AIML Hackathon - IIT Hyderabad (2025)</li>
-    <li>Certificate of Academic Excellence (2-1 Semester)</li>
-    <li>Completed Google Cloud Generative AI Leader Track</li>
-  </ul>
+  <div class="card">
+    <ul>
+      <li>AIML Hackathon - IIT Hyderabad</li>
+      <li>Academic Excellence Award</li>
+      <li>Google Cloud Gen AI Track Completed</li>
+    </ul>
+  </div>
 </section>
 
 <section>
   <h2>Contact</h2>
-  <form onsubmit="sendMessage(event)">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
+  <div class="card">
+    <form onsubmit="sendMessage(event)">
+      <input placeholder="Name" required>
+      <input placeholder="Email" required>
+      <textarea placeholder="Message"></textarea>
+      <button>Send</button>
+    </form>
+  </div>
 </section>
 
 <footer>
   <p>📧 phanindra2k5@gmail.com</p>
-  <p>📍 Warangal, Telangana, India</p>
+  <p>📍 Warangal, India</p>
 </footer>
 
 <script>
-  function sendMessage(e) {
-    e.preventDefault();
-    alert("Message sent successfully!");
+// Typing Animation
+const roles = ["Full Stack Developer", "ML Enthusiast", "Problem Solver"];
+let i = 0, j = 0, current = "", deleting = false;
+
+function type() {
+  current = roles[i];
+  document.getElementById("typing").textContent = current.substring(0, j);
+
+  if (!deleting && j < current.length) j++;
+  else if (deleting && j > 0) j--;
+  else {
+    deleting = !deleting;
+    if (!deleting) i = (i + 1) % roles.length;
   }
+
+  setTimeout(type, deleting ? 50 : 100);
+}
+type();
+
+// Dark Mode
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
+
+// Form
+function sendMessage(e){
+  e.preventDefault();
+  alert("Message sent 🚀");
+}
 </script>
 
 </body>
