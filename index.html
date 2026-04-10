@@ -15,7 +15,7 @@
 }
 
 .light {
-  --bg: #f1f5f9;
+  --bg: #f8fafc;
   --card: white;
   --text: black;
 }
@@ -28,10 +28,9 @@
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top, #1e293b, #020617);
   color: var(--text);
   transition: 0.4s;
-  scroll-behavior: smooth;
 }
 
 /* TOGGLE */
@@ -39,34 +38,34 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
+  font-size: 22px;
   cursor: pointer;
-  font-size: 20px;
 }
 
-/* HEADER */
+/* HERO */
 header {
   text-align: center;
-  padding: 70px 20px;
+  padding: 100px 20px;
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 60px;
   background: linear-gradient(90deg, #38bdf8, #22c55e);
   -webkit-background-clip: text;
   color: transparent;
 }
 
 #typing {
-  font-size: 18px;
+  font-size: 22px;
+  margin-top: 15px;
   color: #94a3b8;
-  margin-top: 10px;
 }
 
-/* LINKS */
+/* BUTTONS */
 .links a {
   margin: 10px;
-  padding: 10px 18px;
-  border-radius: 25px;
+  padding: 12px 20px;
+  border-radius: 30px;
   background: var(--card);
   display: inline-block;
   text-decoration: none;
@@ -76,46 +75,61 @@ h1 {
 
 .links a:hover {
   background: #38bdf8;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: 1100px;
+  margin: 60px auto;
   padding: 20px;
 }
 
 h2 {
-  border-left: 5px solid #38bdf8;
-  padding-left: 10px;
+  font-size: 28px;
   margin-bottom: 20px;
+  border-left: 6px solid #38bdf8;
+  padding-left: 12px;
 }
 
-/* CARDS */
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
 }
 
+/* CARD */
 .card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 18px;
+  backdrop-filter: blur(20px);
   transition: 0.3s;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 10px 40px rgba(56,189,248,0.3);
+}
+
+/* PROJECT BUTTON */
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  color: white;
+  text-decoration: none;
 }
 
 /* SKILLS */
 .skills span {
-  padding: 8px 14px;
-  margin: 5px;
   display: inline-block;
+  margin: 6px;
+  padding: 10px 16px;
   background: #38bdf8;
   border-radius: 20px;
 }
@@ -123,7 +137,7 @@ h2 {
 /* FORM */
 form input, textarea {
   width: 100%;
-  margin: 8px 0;
+  margin: 10px 0;
   padding: 12px;
   border-radius: 8px;
   border: none;
@@ -131,13 +145,14 @@ form input, textarea {
 
 button {
   background: linear-gradient(90deg, #38bdf8, #22c55e);
-  border: none;
   padding: 12px;
+  border: none;
   border-radius: 8px;
   color: white;
   cursor: pointer;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -154,17 +169,17 @@ footer {
   <p id="typing"></p>
 
   <div class="links">
-    <a href="resume.pdf" target="_blank">👀 View Resume</a>
-    <a href="resume.pdf" download>⬇️ Download Resume</a>
+    <a href="resume.pdf" target="_blank">👀 Resume</a>
+    <a href="resume.pdf" download>⬇️ Download</a>
     <a href="https://github.com/Phani-2005hero" target="_blank">💻 GitHub</a>
     <a href="https://www.linkedin.com/in/thirunagari-phanindra-16478334a" target="_blank">🔗 LinkedIn</a>
   </div>
 </header>
 
 <section>
-  <h2>About</h2>
+  <h2>About Me</h2>
   <div class="card">
-    Computer Science student passionate about building real-world applications using Python, Machine Learning, and Web Technologies 🚀
+    Passionate developer building impactful projects in Web Development and Machine Learning 🚀
   </div>
 </section>
 
@@ -172,7 +187,7 @@ footer {
   <h2>Education</h2>
   <div class="card">
     B.Tech CSE - SR University<br>
-    CGPA: <b>8.5 / 10</b>
+    CGPA: <b>8.5</b>
   </div>
 </section>
 
@@ -181,43 +196,48 @@ footer {
   <div class="skills">
     <span>Python</span>
     <span>Java</span>
-    <span>HTML</span>
-    <span>CSS</span>
     <span>JavaScript</span>
-    <span>SQL</span>
     <span>Machine Learning</span>
+    <span>SQL</span>
   </div>
 </section>
 
 <section>
   <h2>Projects</h2>
   <div class="grid">
-    <div class="card">Career Roadmap Website</div>
-    <div class="card">Rain Water Harvesting System</div>
-    <div class="card">Morse Code System</div>
+
+    <div class="card">
+      <h3>Career Roadmap Website</h3>
+      <p>Interactive planning platform</p>
+    </div>
+
+    <div class="card">
+      <h3>Rain Water Harvesting</h3>
+      <p>GIS sustainability system</p>
+    </div>
+
+    <div class="card">
+      <h3>Morse Code System</h3>
+      <p>Accessible communication tool</p>
+    </div>
+
+    <!-- NEW GAME PROJECT -->
+    <div class="card">
+      <h3>Zombie Survival Game 🎮</h3>
+      <p>Unity-based survival game with interactive gameplay</p>
+      <a href="https://github.com/jashwanthreddy21/GMDD-Zombie-Game.git" target="_blank" class="project-btn">View Project</a>
+    </div>
+
   </div>
 </section>
 
 <section>
   <h2>Certifications</h2>
   <div class="grid">
-    <div class="card">Web Development - Infosys</div>
-    <div class="card">Deep Learning - Infosys</div>
-    <div class="card">Data Analytics - Cisco</div>
-    <div class="card">Networking Basics - Cisco</div>
-    <div class="card">Google Cloud Gen AI</div>
-    <div class="card">AWS Cloud Foundations</div>
-  </div>
-</section>
-
-<section>
-  <h2>Achievements</h2>
-  <div class="card">
-    <ul>
-      <li>AIML Hackathon - IIT Hyderabad</li>
-      <li>Academic Excellence Award</li>
-      <li>Google Cloud Gen AI Track Completed</li>
-    </ul>
+    <div class="card">Infosys Web Dev</div>
+    <div class="card">Deep Learning</div>
+    <div class="card">Cisco Analytics</div>
+    <div class="card">AWS Cloud</div>
   </div>
 </section>
 
@@ -234,13 +254,12 @@ footer {
 </section>
 
 <footer>
-  <p>📧 phanindra2k5@gmail.com</p>
-  <p>📍 Warangal, India</p>
+  📧 phanindra2k5@gmail.com
 </footer>
 
 <script>
-// Typing Animation
-const roles = ["Full Stack Developer", "ML Enthusiast", "Problem Solver"];
+// Typing
+const roles = ["Full Stack Developer", "ML Enthusiast", "Game Developer"];
 let i = 0, j = 0, current = "", deleting = false;
 
 function type() {
@@ -258,7 +277,7 @@ function type() {
 }
 type();
 
-// Dark Mode
+// Dark mode
 function toggleMode() {
   document.body.classList.toggle("light");
 }
