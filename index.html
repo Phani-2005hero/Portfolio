@@ -24,10 +24,6 @@
       font-size: 36px;
     }
 
-    a {
-      text-decoration: none;
-    }
-
     .links a {
       margin: 10px;
       display: inline-block;
@@ -49,7 +45,7 @@
       border-radius: 6px;
     }
 
-    .projects {
+    .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
@@ -108,9 +104,18 @@
 <section>
   <h2>About Me</h2>
   <p>
-    Computer Science student with strong foundations in Python, Machine Learning, and Web Development.
-    Passionate about solving real-world problems and building efficient applications.
+    Computer Science undergraduate with strong foundations in Python, Data Structures, and Web Development.
+    Passionate about Machine Learning and building real-world applications.
   </p>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    <h3>B.Tech in Computer Science</h3>
+    <p>SR University</p>
+    <p>CGPA: <b>8.5 / 10</b></p>
+  </div>
 </section>
 
 <section>
@@ -123,29 +128,78 @@
     <span>JavaScript</span>
     <span>SQL</span>
     <span>Machine Learning</span>
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Scikit-Learn</span>
   </div>
 </section>
 
 <section>
   <h2>Projects</h2>
-  <div class="projects">
+  <div class="grid">
 
     <div class="card">
       <h3>Career Roadmap Website</h3>
-      <p>Interactive tool for career planning with dynamic UI.</p>
+      <p>Interactive web app to help users plan career paths.</p>
     </div>
 
     <div class="card">
       <h3>Rain Water Harvesting System</h3>
-      <p>GIS-based system for sustainability analysis.</p>
+      <p>GIS-based system for feasibility and sustainability analysis.</p>
     </div>
 
     <div class="card">
       <h3>Morse Code System</h3>
-      <p>Accessible communication tool for visually impaired users.</p>
+      <p>Accessible communication system for visually impaired users.</p>
     </div>
 
   </div>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Complete Web Development Journey</h3>
+      <p>Infosys Springboard (Oct 2024)</p>
+    </div>
+
+    <div class="card">
+      <h3>Introduction to Deep Learning</h3>
+      <p>Infosys Springboard (Sept 2024)</p>
+    </div>
+
+    <div class="card">
+      <h3>Data Analytics Essentials</h3>
+      <p>Cisco Academy (Dec 2024)</p>
+    </div>
+
+    <div class="card">
+      <h3>Networking Basics</h3>
+      <p>Cisco Academy</p>
+    </div>
+
+    <div class="card">
+      <h3>Google Cloud Generative AI Leader Track</h3>
+      <p>Google Cloud Career Launchpad</p>
+    </div>
+
+    <div class="card">
+      <h3>AWS Cloud Foundations</h3>
+      <p>Amazon Web Services</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Achievements</h2>
+  <ul>
+    <li>Participated in AIML Hackathon - IIT Hyderabad (2025)</li>
+    <li>Certificate of Academic Excellence (2-1 Semester)</li>
+    <li>Completed Google Cloud Generative AI Leader Track</li>
+  </ul>
 </section>
 
 <section>
@@ -159,13 +213,14 @@
 </section>
 
 <footer>
-  <p>📧 phanindra2k5@gmail.com | 📍 Warangal, India</p>
+  <p>📧 phanindra2k5@gmail.com</p>
+  <p>📍 Warangal, Telangana, India</p>
 </footer>
 
 <script>
   function sendMessage(e) {
     e.preventDefault();
-    alert("Message sent!");
+    alert("Message sent successfully!");
   }
 </script>
 
