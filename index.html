@@ -24,6 +24,17 @@
       font-size: 36px;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    .links a {
+      margin: 10px;
+      display: inline-block;
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
     section {
       padding: 30px;
       max-width: 900px;
@@ -86,7 +97,12 @@
 <header>
   <h1>Phanindra Thirunagari</h1>
   <p>Full Stack Developer | ML Enthusiast</p>
-  <a href="resume.pdf" download style="color:#38bdf8;">Download Resume</a>
+
+  <div class="links">
+    <a href="resume.pdf" download>📄 Resume</a>
+    <a href="https://github.com/Phani-2005hero" target="_blank">💻 GitHub</a>
+    <a href="https://www.linkedin.com/in/thirunagari-phanindra-16478334a" target="_blank">🔗 LinkedIn</a>
+  </div>
 </header>
 
 <section>
@@ -149,7 +165,7 @@
 <script>
   function sendMessage(e) {
     e.preventDefault();
-    alert("Message sent! (Backend can be added)");
+    alert("Message sent!");
   }
 </script>
 
