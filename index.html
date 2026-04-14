@@ -27,7 +27,7 @@ body{
   overflow-x:hidden;
 }
 
-/* 🔥 ANIMATED GRADIENT BACKGROUND */
+/* 🔥 ANIMATED BACKGROUND */
 .bg{
   position:fixed;
   width:100%;
@@ -52,39 +52,39 @@ header{
   justify-content:center;
   align-items:center;
   text-align:center;
-  position:relative;
 }
 
-/* BIG NAME */
+/* NAME */
 h1{
-  font-size:95px;
+  font-size:90px;
   font-weight:900;
   background:linear-gradient(90deg,var(--accent),var(--accent2));
   -webkit-background-clip:text;
   color:transparent;
 }
 
-/* BACK TEXT */
-.bg-text{
-  position:absolute;
-  top:45%;
-  font-size:120px;
-  font-weight:900;
-  color:rgba(255,255,255,0.05);
-  z-index:-1;
-  white-space:nowrap;
+/* ROLE */
+.role{
+  font-size:32px;
+  margin-top:10px;
+  font-weight:600;
+  background: linear-gradient(90deg,#38bdf8,#22c55e);
+  -webkit-background-clip:text;
+  color:transparent;
+  letter-spacing:2px;
+  animation: fadeUp 1.5s ease;
 }
 
 /* TYPING */
 #typing{
-  font-size:24px;
+  font-size:22px;
   margin-top:10px;
   color:#94a3b8;
 }
 
 /* BUTTONS */
 .links{
-  margin-top:-30px;
+  margin-top:25px;
 }
 
 .links a{
@@ -115,7 +115,7 @@ h2{
   margin-bottom:20px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
   background:rgba(255,255,255,0.05);
   padding:25px;
@@ -156,6 +156,18 @@ footer{
   padding:30px;
   color:#94a3b8;
 }
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 
@@ -165,14 +177,12 @@ footer{
 
 <header>
 
-  <!-- BACKGROUND TEXT -->
-  <div class="bg-text">FULL STACK</div>
-
-  <!-- NAME -->
   <h1>Thirunagari Phanindra</h1>
+
+  <h2 class="role">Full Stack Developer</h2>
+
   <p id="typing"></p>
 
-  <!-- BUTTONS -->
   <div class="links">
     <a href="resume.pdf">Resume</a>
     <a href="resume.pdf" download>Download</a>
@@ -185,7 +195,7 @@ footer{
 <section>
 <h2>About</h2>
 <div class="card">
-I build powerful applications in Web Development, Machine Learning and Game Development 🚀
+Passionate developer building impactful projects in Web Development, Machine Learning, and Game Development 🚀
 </div>
 </section>
 
@@ -206,13 +216,18 @@ I build powerful applications in Web Development, Machine Learning and Game Deve
 
 <div class="card">
 <h3>Zombie Survival Game 🎮</h3>
-<p>Unity immersive gameplay</p>
-<a href="https://github.com/jashwanthreddy21/GMDD-Zombie-Game.git">View</a>
+<p>Unity immersive gameplay experience</p>
+<a href="https://github.com/jashwanthreddy21/GMDD-Zombie-Game.git">View Project</a>
 </div>
 
 <div class="card">
 <h3>Career Roadmap</h3>
-<p>Interactive planner</p>
+<p>Interactive career planning platform</p>
+</div>
+
+<div class="card">
+<h3>Rain Water Harvesting</h3>
+<p>GIS-based sustainability system</p>
 </div>
 
 </div>
