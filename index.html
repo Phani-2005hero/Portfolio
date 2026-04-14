@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phanindra | Elite Portfolio</title>
+<title>Thirunagari Phanindra | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-:root {
+:root{
   --bg:#020617;
-  --text:#fff;
   --accent:#38bdf8;
+  --accent2:#22c55e;
 }
 
 *{
@@ -22,22 +22,26 @@
 }
 
 body{
-  background:var(--bg);
-  color:var(--text);
+  background: var(--bg);
+  color:white;
   overflow-x:hidden;
-  cursor:none;
 }
 
-/* CUSTOM CURSOR */
-.cursor{
-  width:20px;
-  height:20px;
-  border:2px solid #38bdf8;
-  border-radius:50%;
+/* 🔥 ANIMATED GRADIENT BACKGROUND */
+.bg{
   position:fixed;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  z-index:999;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  background: linear-gradient(270deg,#020617,#0f172a,#020617);
+  background-size:600% 600%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* HERO */
@@ -48,40 +52,58 @@ header{
   justify-content:center;
   align-items:center;
   text-align:center;
+  position:relative;
 }
 
+/* BIG NAME */
 h1{
-  font-size:100px;
+  font-size:95px;
   font-weight:900;
-  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
   -webkit-background-clip:text;
   color:transparent;
 }
 
+/* BACK TEXT */
+.bg-text{
+  position:absolute;
+  top:45%;
+  font-size:120px;
+  font-weight:900;
+  color:rgba(255,255,255,0.05);
+  z-index:-1;
+  white-space:nowrap;
+}
+
+/* TYPING */
 #typing{
-  font-size:25px;
+  font-size:24px;
   margin-top:10px;
   color:#94a3b8;
 }
 
 /* BUTTONS */
+.links{
+  margin-top:-30px;
+}
+
 .links a{
   margin:10px;
-  padding:14px 24px;
-  border-radius:30px;
-  background:rgba(255,255,255,0.05);
+  padding:14px 26px;
+  border-radius:40px;
   text-decoration:none;
   color:white;
-  position:relative;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
   transition:0.3s;
 }
 
 .links a:hover{
   transform:scale(1.1);
-  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
   max-width:1100px;
   margin:100px auto;
@@ -89,8 +111,21 @@ section{
 }
 
 h2{
-  font-size:32px;
+  font-size:34px;
   margin-bottom:20px;
+}
+
+/* CARDS */
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 60px rgba(56,189,248,0.3);
 }
 
 /* GRID */
@@ -100,26 +135,19 @@ h2{
   gap:25px;
 }
 
-/* 3D CARD */
-.card{
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:20px;
-  transition:0.2s;
-  transform-style:preserve-3d;
-}
-
-.card:hover{
-  box-shadow:0 20px 60px rgba(56,189,248,0.3);
-}
-
 /* SKILLS */
 .skills span{
   display:inline-block;
-  padding:10px 15px;
+  padding:10px 16px;
   margin:6px;
   border-radius:20px;
   background:#38bdf8;
+  transition:0.3s;
+}
+
+.skills span:hover{
+  transform:scale(1.2);
+  background:#22c55e;
 }
 
 /* FOOTER */
@@ -133,23 +161,32 @@ footer{
 
 <body>
 
-<div class="cursor" id="cursor"></div>
+<div class="bg"></div>
 
 <header>
-  <h1>PHANINDRA</h1>
+
+  <!-- BACKGROUND TEXT -->
+  <div class="bg-text">FULL STACK</div>
+
+  <!-- NAME -->
+  <h1>Thirunagari Phanindra</h1>
   <p id="typing"></p>
 
+  <!-- BUTTONS -->
   <div class="links">
     <a href="resume.pdf">Resume</a>
     <a href="resume.pdf" download>Download</a>
     <a href="https://github.com/Phani-2005hero">GitHub</a>
     <a href="https://www.linkedin.com/in/thirunagari-phanindra-16478334a">LinkedIn</a>
   </div>
+
 </header>
 
 <section>
 <h2>About</h2>
-<div class="card">Building high-impact projects in Web, ML & Games 🚀</div>
+<div class="card">
+I build powerful applications in Web Development, Machine Learning and Game Development 🚀
+</div>
 </section>
 
 <section>
@@ -158,7 +195,7 @@ footer{
 <span>Python</span>
 <span>Java</span>
 <span>JavaScript</span>
-<span>ML</span>
+<span>Machine Learning</span>
 <span>SQL</span>
 </div>
 </section>
@@ -167,13 +204,13 @@ footer{
 <h2>Projects</h2>
 <div class="grid">
 
-<div class="card tilt">
-<h3>Zombie Game 🎮</h3>
-<p>Unity survival experience</p>
+<div class="card">
+<h3>Zombie Survival Game 🎮</h3>
+<p>Unity immersive gameplay</p>
 <a href="https://github.com/jashwanthreddy21/GMDD-Zombie-Game.git">View</a>
 </div>
 
-<div class="card tilt">
+<div class="card">
 <h3>Career Roadmap</h3>
 <p>Interactive planner</p>
 </div>
@@ -181,51 +218,29 @@ footer{
 </div>
 </section>
 
-<footer>© 2026 Phanindra</footer>
+<footer>
+© 2026 Thirunagari Phanindra
+</footer>
 
 <script>
-// TYPING
-const roles=["Full Stack Dev","ML Enthusiast","Game Dev"];
+// TYPING EFFECT
+const roles=["Full Stack Developer","ML Enthusiast","Game Developer"];
 let i=0,j=0,del=false;
 
 function type(){
 let txt=roles[i];
 document.getElementById("typing").innerText=txt.substring(0,j);
 
-if(!del&&j<txt.length) j++;
-else if(del&&j>0) j--;
+if(!del && j<txt.length) j++;
+else if(del && j>0) j--;
 else{
 del=!del;
 if(!del) i=(i+1)%roles.length;
 }
+
 setTimeout(type,del?50:100);
 }
 type();
-
-// CURSOR
-const cursor=document.getElementById("cursor");
-document.addEventListener("mousemove",(e)=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-// 3D TILT EFFECT
-document.querySelectorAll(".tilt").forEach(card=>{
-card.addEventListener("mousemove",(e)=>{
-const rect=card.getBoundingClientRect();
-const x=e.clientX-rect.left;
-const y=e.clientY-rect.top;
-
-const rotateX=-(y/rect.height-0.5)*20;
-const rotateY=(x/rect.width-0.5)*20;
-
-card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-
-card.addEventListener("mouseleave",()=>{
-card.style.transform="rotateX(0) rotateY(0)";
-});
-});
 </script>
 
 </body>
