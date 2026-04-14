@@ -3,41 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phanindra | Portfolio</title>
+<title>Phanindra | Elite Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #020617;
-  --glass: rgba(255,255,255,0.08);
-  --text: #ffffff;
-  --accent: linear-gradient(90deg,#38bdf8,#22c55e);
+  --bg:#020617;
+  --text:#fff;
+  --accent:#38bdf8;
 }
 
-* {
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
 
-body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: var(--text);
+body{
+  background:var(--bg);
+  color:var(--text);
   overflow-x:hidden;
+  cursor:none;
 }
 
-/* PARTICLES */
-canvas {
-  position: fixed;
-  top:0;
-  left:0;
-  z-index:-1;
+/* CUSTOM CURSOR */
+.cursor{
+  width:20px;
+  height:20px;
+  border:2px solid #38bdf8;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:999;
 }
 
 /* HERO */
-header {
+header{
   height:100vh;
   display:flex;
   flex-direction:column;
@@ -46,114 +50,80 @@ header {
   text-align:center;
 }
 
-h1 {
-  font-size: 90px;
+h1{
+  font-size:100px;
   font-weight:900;
-  background: var(--accent);
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
   -webkit-background-clip:text;
   color:transparent;
-  animation: glow 3s infinite alternate;
 }
 
-@keyframes glow {
-  from { text-shadow:0 0 10px #38bdf8; }
-  to { text-shadow:0 0 30px #22c55e; }
-}
-
-#typing {
-  font-size:24px;
-  margin-top:15px;
+#typing{
+  font-size:25px;
+  margin-top:10px;
   color:#94a3b8;
 }
 
 /* BUTTONS */
-.links a {
+.links a{
   margin:10px;
   padding:14px 24px;
   border-radius:30px;
-  background: var(--glass);
-  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.05);
   text-decoration:none;
   color:white;
+  position:relative;
   transition:0.3s;
 }
 
-.links a:hover {
-  background:linear-gradient(90deg,#38bdf8,#22c55e);
+.links a:hover{
   transform:scale(1.1);
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
 }
 
-/* SECTION */
-section {
+/* SECTIONS */
+section{
   max-width:1100px;
-  margin:80px auto;
+  margin:100px auto;
   padding:20px;
-  opacity:0;
-  transform:translateY(60px);
-  transition:1s;
 }
 
-section.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
-h2 {
+h2{
   font-size:32px;
   margin-bottom:20px;
-  border-left:5px solid #38bdf8;
-  padding-left:10px;
-}
-
-/* CARD */
-.card {
-  background: var(--glass);
-  padding:25px;
-  border-radius:20px;
-  backdrop-filter:blur(20px);
-  transition:0.4s;
-}
-
-.card:hover {
-  transform:translateY(-12px) scale(1.05);
-  box-shadow:0 10px 40px rgba(56,189,248,0.3);
 }
 
 /* GRID */
-.grid {
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
 }
 
-/* PROJECT BUTTON */
-.project-btn {
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 16px;
+/* 3D CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
   border-radius:20px;
-  background:var(--accent);
-  color:white;
-  text-decoration:none;
+  transition:0.2s;
+  transform-style:preserve-3d;
+}
+
+.card:hover{
+  box-shadow:0 20px 60px rgba(56,189,248,0.3);
 }
 
 /* SKILLS */
-.skills span {
+.skills span{
   display:inline-block;
+  padding:10px 15px;
   margin:6px;
-  padding:10px 16px;
   border-radius:20px;
   background:#38bdf8;
-  transition:0.3s;
-}
-
-.skills span:hover {
-  transform:scale(1.2);
-  background:#22c55e;
 }
 
 /* FOOTER */
-footer {
+footer{
   text-align:center;
   padding:30px;
   color:#94a3b8;
@@ -163,157 +133,99 @@ footer {
 
 <body>
 
-<canvas id="bg"></canvas>
+<div class="cursor" id="cursor"></div>
 
 <header>
   <h1>PHANINDRA</h1>
   <p id="typing"></p>
 
   <div class="links">
-    <a href="resume.pdf" target="_blank">Resume</a>
+    <a href="resume.pdf">Resume</a>
     <a href="resume.pdf" download>Download</a>
-    <a href="https://github.com/Phani-2005hero" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/thirunagari-phanindra-16478334a" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Phani-2005hero">GitHub</a>
+    <a href="https://www.linkedin.com/in/thirunagari-phanindra-16478334a">LinkedIn</a>
   </div>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <div class="card">
-    Passionate developer building impactful projects in Web Development, Machine Learning and Game Development 🚀
-  </div>
+<h2>About</h2>
+<div class="card">Building high-impact projects in Web, ML & Games 🚀</div>
 </section>
 
 <section>
-  <h2>Education</h2>
-  <div class="card">
-    B.Tech CSE - SR University <br>
-    CGPA: <b>8.5</b>
-  </div>
+<h2>Skills</h2>
+<div class="skills">
+<span>Python</span>
+<span>Java</span>
+<span>JavaScript</span>
+<span>ML</span>
+<span>SQL</span>
+</div>
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>Python</span>
-    <span>Java</span>
-    <span>JavaScript</span>
-    <span>Machine Learning</span>
-    <span>SQL</span>
-  </div>
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card tilt">
+<h3>Zombie Game 🎮</h3>
+<p>Unity survival experience</p>
+<a href="https://github.com/jashwanthreddy21/GMDD-Zombie-Game.git">View</a>
+</div>
+
+<div class="card tilt">
+<h3>Career Roadmap</h3>
+<p>Interactive planner</p>
+</div>
+
+</div>
 </section>
 
-<section>
-  <h2>Projects</h2>
-  <div class="grid">
-
-    <div class="card">
-      <h3>Career Roadmap Website</h3>
-      <p>Interactive planning platform</p>
-    </div>
-
-    <div class="card">
-      <h3>Rain Water Harvesting</h3>
-      <p>GIS sustainability system</p>
-    </div>
-
-    <div class="card">
-      <h3>Morse Code System</h3>
-      <p>Accessible communication tool</p>
-    </div>
-
-    <div class="card">
-      <h3>Zombie Survival Game 🎮</h3>
-      <p>Unity-based survival game</p>
-      <a href="https://github.com/jashwanthreddy21/GMDD-Zombie-Game.git" target="_blank" class="project-btn">View Project</a>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <div class="card">
-    <form onsubmit="sendMessage(event)">
-      <input placeholder="Name" required>
-      <input placeholder="Email" required>
-      <textarea placeholder="Message"></textarea>
-      <button>Send</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  © 2026 Phanindra | Built with ❤️
-</footer>
+<footer>© 2026 Phanindra</footer>
 
 <script>
-// Typing effect
-const roles = ["Full Stack Developer","ML Enthusiast","Game Developer"];
-let i=0,j=0,cur="",del=false;
+// TYPING
+const roles=["Full Stack Dev","ML Enthusiast","Game Dev"];
+let i=0,j=0,del=false;
 
 function type(){
-  cur=roles[i];
-  document.getElementById("typing").textContent=cur.substring(0,j);
+let txt=roles[i];
+document.getElementById("typing").innerText=txt.substring(0,j);
 
-  if(!del && j<cur.length) j++;
-  else if(del && j>0) j--;
-  else{
-    del=!del;
-    if(!del) i=(i+1)%roles.length;
-  }
-
-  setTimeout(type, del?50:100);
+if(!del&&j<txt.length) j++;
+else if(del&&j>0) j--;
+else{
+del=!del;
+if(!del) i=(i+1)%roles.length;
+}
+setTimeout(type,del?50:100);
 }
 type();
 
-// Scroll animation
-const sections=document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-  sections.forEach(sec=>{
-    if(sec.getBoundingClientRect().top<window.innerHeight-100){
-      sec.classList.add("show");
-    }
-  });
+// CURSOR
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
 });
 
-// Form
-function sendMessage(e){
-  e.preventDefault();
-  alert("Message sent 🚀");
-}
+// 3D TILT EFFECT
+document.querySelectorAll(".tilt").forEach(card=>{
+card.addEventListener("mousemove",(e)=>{
+const rect=card.getBoundingClientRect();
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
 
-// PARTICLES BACKGROUND
-const canvas=document.getElementById("bg");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+const rotateX=-(y/rect.height-0.5)*20;
+const rotateY=(x/rect.width-0.5)*20;
 
-let particles=[];
-for(let i=0;i<80;i++){
-  particles.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2,
-    dx:Math.random()-0.5,
-    dy:Math.random()-0.5
-  });
-}
+card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
 
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>{
-    p.x+=p.dx;
-    p.y+=p.dy;
-
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="#38bdf8";
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
+card.addEventListener("mouseleave",()=>{
+card.style.transform="rotateX(0) rotateY(0)";
+});
+});
 </script>
 
 </body>
